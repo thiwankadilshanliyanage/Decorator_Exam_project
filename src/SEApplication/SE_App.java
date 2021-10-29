@@ -412,60 +412,6 @@ public class SE_App extends javax.swing.JFrame {
              } 
         
         }
-        
-//       if(TypeSelector.getSelectedItem().equals("Orange")){
-//            FruitJuice fj = new Orange();
-//            String t1 =String.valueOf(fj.getPrice());
-//            total.setText(t1);         
-//       }
-//        else if(TypeSelector.getSelectedItem().equals("Avacado")){
-//             FruitJuice fj = new Avacado();
-//             String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);         
-//        }
-//        else if(TypeSelector.getSelectedItem().equals("Strawberry")){
-//             FruitJuice fj = new Strawberry();
-//             String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);         
-//        }
-//        else if(TypeSelector.getSelectedItem().equals("Pomegranatc")){
-//             FruitJuice fj = new Pomegranate();
-//             String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);         
-//        } if (whipping.isSelected()&&TypeSelector.getSelectedItem().equals("Orange")){
-//            FruitJuice fj = new Orange();
-//            fj= new WhippingCream(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }else if (vanilla.isSelected()&&TypeSelector.getSelectedItem().equals("Orange")){
-//            FruitJuice fj = new Orange();
-//            fj= new VanillaCream(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }
-//        else if (cashew.isSelected()&&TypeSelector.getSelectedItem().equals("Orange")){
-//            FruitJuice fj = new Orange();
-//            fj= new CashewNuts(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }
-//        if (whipping.isSelected()&&TypeSelector.getSelectedItem().equals("Avacado")){
-//            FruitJuice fj = new Avacado();
-//            fj= new WhippingCream(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }else if (vanilla.isSelected()&&TypeSelector.getSelectedItem().equals("Avacado")){
-//            FruitJuice fj = new Avacado();
-//            fj= new VanillaCream(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }else if (cashew.isSelected()&&TypeSelector.getSelectedItem().equals("Avacado")){
-//            FruitJuice fj = new Avacado();
-//            fj= new CashewNuts(fj);
-//            String t1 =String.valueOf(fj.getPrice());
-//             total.setText(t1);   
-//        }
-
 
     }//GEN-LAST:event_CalculatetotalActionPerformed
 

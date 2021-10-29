@@ -1,89 +1,63 @@
+/**
+ *
+ * @author Thiwanka
+ */
 public class Test {
-    public static void main(String[] args) {
-        FruitJuice fj = new Pomegranate();
-        System.out.println(fj.getPrice());
-        
-        FruitJuice fj2 = new Orange();
-        fj2= new VanillaCream(fj2);
-        System.out.println(fj2.getPrice());
-        
-        FruitJuice fj3 = new Strawberry();
-        fj3 = new VanillaCream(fj3);
-        fj3 = new WhippingCream(fj3);
-        System.out.println(fj3.getPrice());
-        
-        FruitJuice fj4 = new Avacado();
-        fj4 = new VanillaCream(fj4);
-        fj4 = new WhippingCream(fj4);
-        fj4 = new CashewNuts(fj4);
-        System.out.println(fj4.getPrice());
-            
-    }
-       }
 
-interface FruitJuice{
+    public static void main(String[] args) {
+
+          IceCream i1 = new VanillaIceCream();
+                   i1 = new ChocolateSauce(i1);//chocolate sause IS-A Iceceam
+                   System.out.println(i1.getDes());
+                   System.out.println(i1.getPrice());
+    }
+    
+}
+interface  IceCream{//Component
     public abstract double getPrice();
+    public abstract String getDes();
     
 }
-class Orange implements FruitJuice{
+class VanillaIceCream implements IceCream{//SubComponent (IS-A)
     @Override
     public double getPrice(){
-        return 100;
+        return 50;
     }
-}
-class Avacado implements FruitJuice{
     @Override
-    public double  getPrice(){
-        return 120;
+    public String getDes(){
+        return "Vanila Icecream";
     }
 }
-class Strawberry implements FruitJuice{
+abstract class IceCreamDecorator implements IceCream{//Decorator (IS-A)
+    private final IceCream iceCream;    //HAS_A
+
+    public IceCreamDecorator(IceCream iceCream) {//Decorator must has a icecream therefor we create constructor in decorator class (Because before add chocolate sause must has a icecream)
+        this.iceCream = iceCream;
+    }
     @Override
-    public double  getPrice(){
-        return 200;
+    public double getPrice(){
+        return iceCream.getPrice();
     }
-}
-class Pomegranate implements FruitJuice{
     @Override
-    public double  getPrice(){
-        return 250;
+    public String getDes(){
+        return iceCream.getDes();
     }
-}
-abstract class Toppings implements FruitJuice{
-   private final FruitJuice fruitJuice;
     
-    public Toppings(FruitJuice fruitJuice){
-        this.fruitJuice = fruitJuice;
-    }
-    @Override
-    public double getPrice(){
-        return fruitJuice.getPrice();
-    }
 }
-class WhippingCream extends Toppings{
-    public WhippingCream(FruitJuice fruitJuice){
-        super(fruitJuice);
-    }
+ class ChocolateSauce extends IceCreamDecorator{//SubDecorator (IS-A)
+    
+     public ChocolateSauce(IceCream iceCream) {//child class must inherit super class everythings,Therefor it must has constructor
+         super(iceCream);//child class call supper class
+     }
+
     @Override
-    public double getPrice(){
-        return super.getPrice()+20;
-    }
-}
-class VanillaCream extends Toppings{
-    public VanillaCream(FruitJuice fruitJuice){
-        super(fruitJuice);
-    }
-    @Override
-     public double getPrice(){
-        return super.getPrice()+50;
-    }
-}
-class CashewNuts extends Toppings{
-    public CashewNuts(FruitJuice fruitJuice){
-        super(fruitJuice);
-    }
-    @Override
-     public double getPrice(){
+    public double getPrice() {
         return super.getPrice()+10;
     }
+     @Override
+    public String getDes(){
+        return super.getDes()+" With Chocolate Sauce" ;
+    }
+    
 }
+   

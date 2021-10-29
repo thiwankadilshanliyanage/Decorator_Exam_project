@@ -31,7 +31,7 @@ public class SE_App extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TypeSelector = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
+        Price = new javax.swing.JLabel();
         Calculatetotal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
@@ -43,12 +43,14 @@ public class SE_App extends javax.swing.JFrame {
         setTitle("Decorator Pattern Test");
         setAlwaysOnTop(true);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Fresh Fruit");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Fruit Juice Type");
@@ -60,14 +62,13 @@ public class SE_App extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Type");
+        Price.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Price.setForeground(new java.awt.Color(255, 0, 51));
+        Price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Price.setText("Price");
 
-        Calculatetotal.setBackground(new java.awt.Color(51, 51, 255));
+        Calculatetotal.setBackground(new java.awt.Color(204, 0, 51));
         Calculatetotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        Calculatetotal.setForeground(new java.awt.Color(255, 255, 255));
         Calculatetotal.setText("Calculate Total");
         Calculatetotal.setContentAreaFilled(false);
         Calculatetotal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -77,12 +78,12 @@ public class SE_App extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Toppings");
 
-        total.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        total.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         total.setForeground(new java.awt.Color(255, 0, 51));
         total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         total.setText("00.00");
@@ -95,6 +96,11 @@ public class SE_App extends javax.swing.JFrame {
         });
 
         vanilla.setText("Vanilla Cream");
+        vanilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vanillaActionPerformed(evt);
+            }
+        });
 
         cashew.setText("Cashew Nuts");
         cashew.addActionListener(new java.awt.event.ActionListener() {
@@ -110,59 +116,61 @@ public class SE_App extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(111, 111, 111)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(24, 24, 24)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(TypeSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(whipping)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(vanilla))
-                                            .addComponent(cashew))))
-                                .addGap(0, 30, Short.MAX_VALUE))
-                            .addComponent(Calculatetotal, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                                        .addContainerGap()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(whipping, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cashew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(vanilla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Calculatetotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TypeSelector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(201, 201, 201)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 284, Short.MAX_VALUE)
+                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(283, 283, 283))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TypeSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(whipping)
-                    .addComponent(vanilla))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cashew)
-                .addGap(6, 6, 6)
+                    .addComponent(TypeSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(whipping)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cashew, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(vanilla)
+                .addGap(18, 18, 18)
                 .addComponent(Calculatetotal)
+                .addGap(18, 18, 18)
+                .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -195,24 +203,44 @@ public class SE_App extends javax.swing.JFrame {
                 FruitJuice fj = new Orange();
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                FruitJuice des1 = new Orange();
+                String d1 = des1.getDes();
+                Price.setText(d1);
+                
             }
             if(TypeSelector.getSelectedItem().equals("Orange")&&whipping.isSelected()){
                 FruitJuice fj = new Orange();
                 fj= new WhippingCream(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1);
+                
+                FruitJuice des1 = new Orange();
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
             if(TypeSelector.getSelectedItem().equals("Orange")&&vanilla.isSelected()){
                 FruitJuice fj = new Orange();
                 fj= new VanillaCream(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                 FruitJuice des1 = new Orange();
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
             if(TypeSelector.getSelectedItem().equals("Orange")&&cashew.isSelected()){
              FruitJuice fj = new Orange();
                 fj= new CashewNuts(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                FruitJuice des1 = new Orange();
+                des1= new CashewNuts(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
              if(TypeSelector.getSelectedItem().equals("Orange")&&cashew.isSelected()&&whipping.isSelected()){
                  FruitJuice fj1 = new Orange();
@@ -220,6 +248,12 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new WhippingCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Orange();
+                des1= new CashewNuts(des1);
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
              if(TypeSelector.getSelectedItem().equals("Orange")&&cashew.isSelected()&&vanilla.isSelected()){
                  FruitJuice fj1 = new Orange();
@@ -227,6 +261,12 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new VanillaCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Orange();
+                des1= new CashewNuts(des1);
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
              if(TypeSelector.getSelectedItem().equals("Orange")&&vanilla.isSelected()&&whipping.isSelected()){
                  FruitJuice fj1 = new Orange();
@@ -234,6 +274,13 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new VanillaCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Orange();
+                des1= new VanillaCream(des1);
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
+                
              }  if(TypeSelector.getSelectedItem().equals("Orange")&&vanilla.isSelected()&&whipping.isSelected()&&cashew.isSelected()){
                  FruitJuice fj1 = new Orange();
                  fj1= new WhippingCream(fj1);
@@ -241,6 +288,13 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 = new CashewNuts(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Orange();
+                des1= new CashewNuts(des1);
+                des1= new WhippingCream(des1);
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
         
         }
@@ -251,24 +305,43 @@ public class SE_App extends javax.swing.JFrame {
                 FruitJuice fj = new Avacado();
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                FruitJuice des1 = new Avacado();
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
              if(TypeSelector.getSelectedItem().equals("Avacado")&&whipping.isSelected()){
                 FruitJuice fj = new Avacado();
                 fj= new WhippingCream(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1);
+                
+                FruitJuice des1 = new Avacado();
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
             if(TypeSelector.getSelectedItem().equals("Avacado")&&vanilla.isSelected()){
                 FruitJuice fj = new Avacado();
                 fj= new VanillaCream(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                FruitJuice des1 = new Avacado();
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
             if(TypeSelector.getSelectedItem().equals("Avacado")&&cashew.isSelected()){
              FruitJuice fj = new Avacado();
                 fj= new CashewNuts(fj);
                 String t1 =String.valueOf(fj.getPrice());
                 total.setText(t1); 
+                
+                FruitJuice des1 = new Avacado();
+                des1= new CashewNuts(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
             }
              if(TypeSelector.getSelectedItem().equals("Avacado")&&cashew.isSelected()&&whipping.isSelected()){
                  FruitJuice fj1 = new Avacado();
@@ -276,6 +349,12 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new WhippingCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Avacado();
+                des1= new CashewNuts(des1);
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
              if(TypeSelector.getSelectedItem().equals("Avacado")&&cashew.isSelected()&&vanilla.isSelected()){
                  FruitJuice fj1 = new Avacado();
@@ -283,6 +362,12 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new VanillaCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Avacado();
+                des1= new CashewNuts(des1);
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
              if(TypeSelector.getSelectedItem().equals("Avacado")&&vanilla.isSelected()&&whipping.isSelected()){
                  FruitJuice fj1 = new Avacado();
@@ -290,6 +375,12 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 =new VanillaCream(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Avacado();
+                des1= new VanillaCream(des1);
+                des1= new WhippingCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              }  if(TypeSelector.getSelectedItem().equals("Avacado")&&vanilla.isSelected()&&whipping.isSelected()&&cashew.isSelected()){
                  FruitJuice fj1 = new Avacado();
                  fj1= new WhippingCream(fj1);
@@ -297,6 +388,13 @@ public class SE_App extends javax.swing.JFrame {
                  fj1 = new CashewNuts(fj1);
                 String t2 =String.valueOf(fj1.getPrice());
                 total.setText(t2);
+                
+                FruitJuice des1 = new Avacado();
+                des1= new CashewNuts(des1);
+                des1= new WhippingCream(des1);
+                des1= new VanillaCream(des1);
+                String d1 = des1.getDes();
+                Price.setText(d1);
              } 
         
         }
@@ -423,6 +521,10 @@ public class SE_App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cashewActionPerformed
 
+    private void vanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vanillaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vanillaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -457,14 +559,13 @@ public class SE_App extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Calculatetotal;
+    private javax.swing.JLabel Price;
     private javax.swing.JComboBox<String> TypeSelector;
     private javax.swing.JCheckBox cashew;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel total;
@@ -472,20 +573,29 @@ public class SE_App extends javax.swing.JFrame {
     private javax.swing.JCheckBox whipping;
     // End of variables declaration//GEN-END:variables
 }
-interface FruitJuice{
+interface  FruitJuice{//Component
     public abstract double getPrice();
+    public abstract String getDes();
     
 }
-class Orange implements FruitJuice{
+class Orange implements FruitJuice{//SubComponent (IS-A)
     @Override
     public double getPrice(){
         return 100;
     }
-}
-class Avacado implements FruitJuice{
+    @Override
+    public String getDes(){
+        return "Orange";
+    }
+}class Avacado implements FruitJuice{
     @Override
     public double  getPrice(){
         return 120;
+    }
+
+    @Override
+    public String getDes() {
+       return "Avacado";
     }
 }
 class Strawberry implements FruitJuice{
@@ -493,48 +603,84 @@ class Strawberry implements FruitJuice{
     public double  getPrice(){
         return 200;
     }
+
+    @Override
+    public String getDes() {
+        return "Strawberry";
+    }
 }
 class Pomegranate implements FruitJuice{
     @Override
     public double  getPrice(){
         return 250;
     }
+
+    @Override
+    public String getDes() {
+        return "Pomegranate";
+    }
 }
-abstract class Toppings implements FruitJuice{
-   private final FruitJuice fruitJuice;
-    
-    public Toppings(FruitJuice fruitJuice){
+abstract class Toppings implements FruitJuice{//Decorator (IS-A)
+    private final FruitJuice fruitJuice;    //HAS_A
+
+    public Toppings(FruitJuice fruitJuice) {//Decorator must has a icecream therefor we create constructor in decorator class (Because before add chocolate sause must has a icecream)
         this.fruitJuice = fruitJuice;
     }
     @Override
     public double getPrice(){
         return fruitJuice.getPrice();
     }
-}
-class WhippingCream extends Toppings{
-    public WhippingCream(FruitJuice fruitJuice){
-        super(fruitJuice);
-    }
     @Override
-    public double getPrice(){
+    public String getDes(){
+        return fruitJuice.getDes();
+    }
+    
+}
+ class WhippingCream extends Toppings{//SubDecorator (IS-A)
+    
+     public WhippingCream(FruitJuice fruitJuice) {//child class must inherit super class everythings,Therefor it must has constructor
+         super(fruitJuice);//child class call supper class
+     }
+
+    @Override
+    public double getPrice() {
         return super.getPrice()+20;
     }
-}
-class VanillaCream extends Toppings{
-    public VanillaCream(FruitJuice fruitJuice){
-        super(fruitJuice);
+     @Override
+    public String getDes(){
+        return super.getDes()+" Whipping Cream " ;
     }
+    
+}
+ class VanillaCream extends Toppings{//SubDecorator (IS-A)
+    
+     public VanillaCream(FruitJuice fruitJuice) {//child class must inherit super class everythings,Therefor it must has constructor
+         super(fruitJuice);//child class call supper class
+     }
+
     @Override
-     public double getPrice(){
+    public double getPrice() {
         return super.getPrice()+50;
     }
-}
-class CashewNuts extends Toppings{
-    public CashewNuts(FruitJuice fruitJuice){
-        super(fruitJuice);
+     @Override
+    public String getDes(){
+        return super.getDes()+" Vanilla Cream " ;
     }
+    
+}
+ class CashewNuts extends Toppings{//SubDecorator (IS-A)
+    
+     public CashewNuts(FruitJuice fruitJuice) {//child class must inherit super class everythings,Therefor it must has constructor
+         super(fruitJuice);//child class call supper class
+     }
+
     @Override
-     public double getPrice(){
+    public double getPrice() {
         return super.getPrice()+10;
     }
+     @Override
+    public String getDes(){
+        return super.getDes()+" Cashew Nuts " ;
+    }
+    
 }

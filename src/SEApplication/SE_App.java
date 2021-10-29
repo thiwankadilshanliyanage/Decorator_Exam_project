@@ -30,12 +30,14 @@ public class SE_App extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TypeSelector = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Calculatetotal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        whipping = new javax.swing.JCheckBox();
+        vanilla = new javax.swing.JCheckBox();
+        cashew = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Decorator Pattern Test");
@@ -51,10 +53,10 @@ public class SE_App extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Fruit Juice Type");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        TypeSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Orange", "Avacado", "Strawberry", "Pomegranatc" }));
+        TypeSelector.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                TypeSelectorActionPerformed(evt);
             }
         });
 
@@ -63,24 +65,43 @@ public class SE_App extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Type");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Calculate Total");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Calculatetotal.setBackground(new java.awt.Color(51, 51, 255));
+        Calculatetotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Calculatetotal.setForeground(new java.awt.Color(255, 255, 255));
+        Calculatetotal.setText("Calculate Total");
+        Calculatetotal.setContentAreaFilled(false);
+        Calculatetotal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Calculatetotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalculatetotalActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Toppings");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("00.00");
+        total.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        total.setForeground(new java.awt.Color(255, 0, 51));
+        total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total.setText("00.00");
+
+        whipping.setText("Whipping Cream");
+        whipping.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                whippingActionPerformed(evt);
+            }
+        });
+
+        vanilla.setText("Vanilla Cream");
+
+        cashew.setText("Cashew Nuts");
+        cashew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,66 +110,68 @@ public class SE_App extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(67, 67, 67)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(111, 111, 111)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(24, 24, 24)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TypeSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(whipping)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(vanilla))
+                                            .addComponent(cashew))))
+                                .addGap(0, 30, Short.MAX_VALUE))
+                            .addComponent(Calculatetotal, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(111, 111, 111)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 3, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(142, 142, 142))
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(14, 14, 14)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(223, Short.MAX_VALUE)))
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                    .addComponent(TypeSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(whipping)
+                    .addComponent(vanilla))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cashew)
+                .addGap(6, 6, 6)
+                .addComponent(Calculatetotal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(144, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(111, 111, 111)))
+                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,9 +182,54 @@ public class SE_App extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void TypeSelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeSelectorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_TypeSelectorActionPerformed
+
+    private void CalculatetotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculatetotalActionPerformed
+        // TODO add your handling code here:
+        
+       if(TypeSelector.getSelectedItem().equals("Orange")){
+            FruitJuice fj = new Orange();
+            String t1 =String.valueOf(fj.getPrice());
+            total.setText(t1);         
+       }
+        else if(TypeSelector.getSelectedItem().equals("Avacado")){
+             FruitJuice fj = new Avacado();
+             String t1 =String.valueOf(fj.getPrice());
+             total.setText(t1);         
+        }
+        else if(TypeSelector.getSelectedItem().equals("Strawberry")){
+             FruitJuice fj = new Strawberry();
+             String t1 =String.valueOf(fj.getPrice());
+             total.setText(t1);         
+        }
+        else if(TypeSelector.getSelectedItem().equals("Pomegranatc")){
+             FruitJuice fj = new Pomegranate();
+             String t1 =String.valueOf(fj.getPrice());
+             total.setText(t1);         
+        } if (whipping.isSelected()&&TypeSelector.getSelectedItem().equals("Orange")){
+            FruitJuice fj = new Orange();
+            fj= new WhippingCream(fj);
+            String t1 =String.valueOf(fj.getPrice());
+             total.setText(t1);   
+        }else if (vanilla.isSelected()&&TypeSelector.getSelectedItem().equals("Orange")){
+            FruitJuice fj = new Orange();
+            fj= new VanillaCream(fj);
+            String t1 =String.valueOf(fj.getPrice());
+             total.setText(t1);   
+        }
+
+
+    }//GEN-LAST:event_CalculatetotalActionPerformed
+
+    private void whippingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_whippingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_whippingActionPerformed
+
+    private void cashewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cashewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,14 +267,82 @@ public class SE_App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton Calculatetotal;
+    private javax.swing.JComboBox<String> TypeSelector;
+    private javax.swing.JCheckBox cashew;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel total;
+    private javax.swing.JCheckBox vanilla;
+    private javax.swing.JCheckBox whipping;
     // End of variables declaration//GEN-END:variables
+}
+interface FruitJuice{
+    public abstract double getPrice();
+    
+}
+class Orange implements FruitJuice{
+    @Override
+    public double getPrice(){
+        return 100;
+    }
+}
+class Avacado implements FruitJuice{
+    @Override
+    public double  getPrice(){
+        return 120;
+    }
+}
+class Strawberry implements FruitJuice{
+    @Override
+    public double  getPrice(){
+        return 200;
+    }
+}
+class Pomegranate implements FruitJuice{
+    @Override
+    public double  getPrice(){
+        return 250;
+    }
+}
+abstract class Toppings implements FruitJuice{
+   private final FruitJuice fruitJuice;
+    
+    public Toppings(FruitJuice fruitJuice){
+        this.fruitJuice = fruitJuice;
+    }
+    @Override
+    public double getPrice(){
+        return fruitJuice.getPrice();
+    }
+}
+class WhippingCream extends Toppings{
+    public WhippingCream(FruitJuice fruitJuice){
+        super(fruitJuice);
+    }
+    @Override
+    public double getPrice(){
+        return super.getPrice()+20;
+    }
+}
+class VanillaCream extends Toppings{
+    public VanillaCream(FruitJuice fruitJuice){
+        super(fruitJuice);
+    }
+    @Override
+     public double getPrice(){
+        return super.getPrice()+50;
+    }
+}
+class CashewNuts extends Toppings{
+    public CashewNuts(FruitJuice fruitJuice){
+        super(fruitJuice);
+    }
+    @Override
+     public double getPrice(){
+        return super.getPrice()+10;
+    }
 }
